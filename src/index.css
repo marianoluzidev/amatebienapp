@@ -1,0 +1,136 @@
+:root {
+  --brand-pink: #f6dbe3;
+  --brand-gold: #b08d57;
+}
+
+/* Aseguramos que todo herede el fondo rosa de Ionic */
+html, body, #root, ion-app, ion-content {
+  background: var(--ion-background-color);
+  color: var(--ion-text-color);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* ===== HERO / LOGO ===== */
+.home-hero { display:flex; justify-content:center; padding: 28px 16px 8px; }
+.home-logo {
+  width: 184px; height: 184px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #ffc9c9;
+  border: 1px solid var(--brand-gold);
+  box-shadow: 0 10px 26px rgba(176,141,87,.28);
+  display:flex; align-items:center; justify-content:center;
+}
+/* 🔴 Si tu logo ya trae fondo rosa dentro, usar contain para no cortarlo */
+.home-logo img { width: 100%; height: 100%; }
+
+
+/* Centrar el botón y limitar su ancho */
+.cta {
+  display: flex;
+  justify-content: center;
+  padding: 8px 16px 16px;
+}
+
+ion-button.reserve-btn {
+  display: block;
+  width: min(92vw, 360px);   /* ancho responsivo y centrado */
+  margin: 0 auto;
+}
+
+/* El “native” ocupa el 100% del ancho definido arriba */
+ion-button.reserve-btn::part(native) {
+  width: 100%;
+  border-radius: 999px;
+  height: 56px;
+  padding: 0 24px;
+  background: linear-gradient(180deg, #c9ab74, #b08d57);
+  box-shadow: 0 10px 24px rgba(176,141,87,.35);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: .3px;
+  text-transform: none;
+}
+
+/* Por si routerLink mete un <a> adentro, que no se subraye */
+ion-button.reserve-btn::part(native) a {
+  all: unset;
+  color: inherit;
+}
+
+
+/* ===== TARJETA DE SERVICIOS ===== */
+/* La lista no debe pintar fondo */
+.home-card ion-list {
+  background: transparent !important;
+  padding: 0 8px 8px;
+  text-align: center;
+}
+
+/* Cada servicio como “tarjetita” blanca */
+.home-card ion-item.service-item {
+  --background: #ffffff;            /* ⬅️ fondo blanco */
+  --border-color: transparent;
+  --padding-start: 14px;
+  --inner-padding-end: 14px;
+  --inner-padding-top: 12px;
+  --inner-padding-bottom: 12px;
+  margin: 10px 0;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(63, 53, 58, 0.06);
+}
+
+/* Redondear el host (Shadow DOM) del ion-item */
+.home-card ion-item.service-item::part(native) {
+  border-radius: 16px;
+}
+
+/* (Opcional) tipografía dentro del item */
+.home-card ion-item.service-item h3 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3f373b;
+  margin: 0;
+}
+
+.home-card ion-item.service-item p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  color: #6c6166;
+}
+
+.section-title {
+  text-align: center;        /* ⬅️ centra el texto */
+  font-size: 18px;
+  font-weight: 600;
+  margin: 4px 0 14px;
+  padding-top: 10px;
+  color: #5a4f54;
+}
+
+.time-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f2e6d6;
+  color: #7c6642;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  margin-top: 6px;
+}
+
+/* Asegura fondo rosa en el área scrolleable de la página */
+ion-content {
+  --background: var(--ion-background-color);
+}
+/* Un respiro abajo para que no “tope” el scroll con el borde */
+ion-content::part(scroll) {
+  padding-bottom: 24px;
+}
+
+
+

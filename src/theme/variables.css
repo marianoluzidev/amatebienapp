@@ -1,0 +1,17 @@
+:root {
+  /* Primario dorado */
+  --ion-color-primary: #b08d57;
+  --ion-color-primary-rgb: 176,141,87;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #9c7b4e;
+  --ion-color-primary-tint: #c9ab74;
+
+  /* Secundario rosa (por si lo necesitás) */
+  --ion-color-secondary: #f6dbe3;
+  --ion-color-secondary-contrast: #3f353a;
+
+  /* 👇 Fondo global de Ionic (esto devuelve el rosa de fondo) */
+  --ion-background-color: #f6dbe3;
+  --ion-text-color: #433b3f;
+}
